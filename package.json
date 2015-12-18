@@ -1,0 +1,25 @@
+{
+  "name": "mrspider-validator",
+  "version": "0.0.1",
+  "description": "mrspider middleware to validate data that has been extracted.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/vermiculite/mrspider-validator.git"
+  },
+  "keywords": [
+    "mrspider",
+    "middleware",
+    "validator",
+    "data"
+  ],
+  "author": "Sean Hayes <seanowenhayes@gmail.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/vermiculite/mrspider-validator/issues"
+  },
+  "homepage": "https://github.com/vermiculite/mrspider-validator#readme"
+}
