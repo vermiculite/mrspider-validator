@@ -4,7 +4,7 @@
   "description": "mrspider middleware to validate data that has been extracted.",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "node_modules/mocha/bin/_mocha --ui tdd --reporter spec --recursive test"
   },
   "repository": {
     "type": "git",
