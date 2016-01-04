@@ -4,7 +4,10 @@
   "description": "mrspider middleware to validate data that has been extracted.",
   "main": "index.js",
   "scripts": {
-    "test": "node_modules/mocha/bin/_mocha --ui tdd --reporter spec --recursive test"
+    "test": "node_modules/mocha/bin/_mocha --ui tdd --reporter spec --recursive test",
+    "test-watch": "mocha --require test/setup --recursive --watch",
+    "test-cov": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*",
+    "cover": "node_modules/istanbul/lib/cli.js cover node_modules/mocha/bin/_mocha -- -R spec test/*"
   },
   "repository": {
     "type": "git",
@@ -27,6 +30,7 @@
   },
   "devDependencies": {
     "chai": "^3.4.1",
+    "istanbul": "^0.4.1",
     "mocha": "^2.3.4"
   }
 }
