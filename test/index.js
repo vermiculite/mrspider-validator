@@ -29,16 +29,22 @@ describe('mrspider validator', function () {
                 message: 'supposed to be a number'
             }
         };
+        validPage.spider = validSpider;
     });
 
     it('should call the callback', function (done) {
         var validator = mrspiderValidator(validRules);
-        validator(validPage, validSpider, done);
+        validator._transform(validPage, done);
+    });
+
+    it('should call the callback given no rules.', function (done) {
+        var validator = mrspiderValidator();
+        validator._transform(validPage, done);
     });
 
     it('should remove data fields not specified in the validation', function (done) {
         var validator = mrspiderValidator(validRules);
-        validator(validPage, validSpider, function () {
+        validator._transform(validPage, function () {
             var data = validPage.data;
             data.age.should.equal(42);
             data.name.should.equal('sean');
@@ -51,7 +57,7 @@ describe('mrspider validator', function () {
     it('should remove data fields not specified in the validation', function (done) {
         var validator = mrspiderValidator(validRules);
         delete validPage.data.name;
-        validator(validPage, validSpider, function () {
+        validator._transform(validPage, function () {
             var data = validPage.data;
             data.age.should.equal(42);
             should.not.exist(data.dob);
@@ -59,5 +65,4 @@ describe('mrspider validator', function () {
             done();
         });
     });
-
 });

@@ -26,6 +26,7 @@
   },
   "homepage": "https://github.com/vermiculite/mrspider-validator#readme",
   "dependencies": {
+    "through2": "^2.0.1",
     "validate": "^3.0.1"
   },
   "devDependencies": {
