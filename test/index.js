@@ -34,17 +34,17 @@ describe('mrspider validator', function () {
 
     it('should call the callback', function (done) {
         var validator = mrspiderValidator(validRules);
-        validator._transform(validPage, done);
+        validator._transform(validPage, 'utf8', done);
     });
 
     it('should call the callback given no rules.', function (done) {
         var validator = mrspiderValidator();
-        validator._transform(validPage, done);
+        validator._transform(validPage, 'utf8', done);
     });
 
     it('should remove data fields not specified in the validation', function (done) {
         var validator = mrspiderValidator(validRules);
-        validator._transform(validPage, function () {
+        validator._transform(validPage, 'utf8', function () {
             var data = validPage.data;
             data.age.should.equal(42);
             data.name.should.equal('sean');
@@ -57,7 +57,7 @@ describe('mrspider validator', function () {
     it('should remove data fields not specified in the validation', function (done) {
         var validator = mrspiderValidator(validRules);
         delete validPage.data.name;
-        validator._transform(validPage, function () {
+        validator._transform(validPage, 'utf8', function () {
             var data = validPage.data;
             data.age.should.equal(42);
             should.not.exist(data.dob);
