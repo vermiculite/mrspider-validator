@@ -10,6 +10,7 @@ module.exports = function(options) {
         var valid = data.validate(page.data);
         console.log(valid);
         page.valid = valid.length ? false : true;
+        this.push(page);
         setImmediate(next);
     });
 };
