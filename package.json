@@ -1,6 +1,6 @@
 {
   "name": "mrspider-validator",
-  "version": "1.0.2",
+  "version": "1.1.0",
   "description": "mrspider middleware to validate data that has been extracted.",
   "main": "index.js",
   "scripts": {
